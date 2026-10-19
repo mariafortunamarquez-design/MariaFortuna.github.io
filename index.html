@@ -68,18 +68,87 @@
           id="contactButton"
           type="button"
           aria-controls="contactMenu"
+          aria-expanded="false"
         >
           Contacto
         </button>
 
         <div class="contact-menu" id="contactMenu">
-          <a href="mailto:mariafortunamarquez@gmail.com">
-            Email
-          </a>
+          <div class="contact-item">
+            <button
+              class="contact-option"
+              type="button"
+              aria-expanded="false"
+              aria-controls="emailDetails"
+            >
+              Email
+            </button>
 
-          <a href="tel:+34684080986">
-            Teléfono
-          </a>
+            <div
+              class="contact-details"
+              id="emailDetails"
+              hidden
+            >
+              <span class="contact-value">
+                mariafortunamarquez@gmail.com
+              </span>
+
+              <div class="contact-actions">
+                <button
+                  class="copy-button"
+                  type="button"
+                  data-copy="mariafortunamarquez@gmail.com"
+                >
+                  Copiar
+                </button>
+
+                <a href="mailto:mariafortunamarquez@gmail.com">
+                  Enviar correo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <button
+              class="contact-option"
+              type="button"
+              aria-expanded="false"
+              aria-controls="phoneDetails"
+            >
+              Teléfono
+            </button>
+
+            <div
+              class="contact-details"
+              id="phoneDetails"
+              hidden
+            >
+              <span class="contact-value">
+                +34 684 080 986
+              </span>
+
+              <div class="contact-actions">
+                <button
+                  class="copy-button"
+                  type="button"
+                  data-copy="+34684080986"
+                >
+                  Copiar
+                </button>
+
+                <a href="tel:+34684080986">
+                  Llamar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <p
+            class="copy-status"
+            id="copyStatus"
+            role="status"
+          ></p>
         </div>
       </div>
     </div>
