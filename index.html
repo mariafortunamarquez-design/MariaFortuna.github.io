@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>María Fortuna — Software Developer</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <canvas id="background"></canvas>
+
+  <button class="theme-button" id="themeToggle" aria-label="Cambiar entre modo claro y oscuro">
+    <span id="themeIcon">🌙</span>
+    <span id="themeText">Modo oscuro</span>
+  </button>
+
+  <main class="card">
+    <img
+      class="avatar"
+      src="foto.jpg"
+      alt="Foto de María Fortuna"
+      onerror="this.style.display='none'"
+    >
+
+    <h1>María Fortuna</h1>
+    <p class="role">Desarrollo de software · Bases de Datos · Unity</p>
+    <p class="role">Orientación a objetos · Web · Godot</p>
+
+    <div class="links">
+      <a
+        class="link linkedin"
+        href="https://www.linkedin.com/in/mar%C3%ADa-fortuna-rodr%C3%ADguez-m%C3%A1rquez-822167445/"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+
+      <a
+        class="link github"
+        href="https://github.com/mariafortunamarquez-design"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
+
+      <div class="contact-wrap">
+        <button class="contact-button" id="contactButton">
+          Contacto
+        </button>
+
+        <div class="contact-menu" id="contactMenu">
+          <a href="mailto:mariafortunamarquez@gmail.com">Email</a>
+          <a href="tel:+34684080986">Teléfono</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
