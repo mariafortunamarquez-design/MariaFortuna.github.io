@@ -1,0 +1,214 @@
+:root {
+  --bg-1: #f8fafc;
+  --bg-2: #e2e8f0;
+  --card: rgba(255, 255, 255, .82);
+  --border: rgba(15, 23, 42, .12);
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --shadow: 0 20px 50px rgba(15, 23, 42, .12);
+}
+
+html[data-theme="dark"] {
+  --bg-1: #070b18;
+  --bg-2: #101a30;
+  --card: rgba(10, 16, 32, .82);
+  --border: rgba(196, 181, 253, .22);
+  --text: #e7e9f5;
+  --muted: #a5afc7;
+  --accent: #8b5cf6;
+  --shadow: 0 25px 60px rgba(0, 0, 0, .55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  transition: background .4s ease, color .4s ease;
+  overflow-x: hidden;
+}
+
+#background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.theme-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform .15s ease, border-color .2s ease;
+}
+
+.theme-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 2rem 1.75rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.avatar {
+  width: 116px;
+  height: 116px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, .12);
+  display: block;
+}
+
+h1 {
+  margin: 0 0 .3rem;
+  font-size: 1.75rem;
+  letter-spacing: -.02em;
+}
+
+.role {
+  margin: 0 0 .4rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.links {
+  display: grid;
+  gap: .7rem;
+  margin-top: 1.2rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  padding: .9rem 1rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: 650;
+  text-decoration: none;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.link:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.linkedin {
+  background: #0a66c2;
+}
+
+.github {
+  background: #24292f;
+  border: 1px solid #30363d;
+}
+
+.contact-wrap {
+  margin-top: .7rem;
+  position: relative;
+}
+
+.contact-button {
+  width: 100%;
+  padding: .9rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .15s ease;
+}
+
+.contact-button:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.contact-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + .5rem);
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  padding: .5rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.contact-menu.open {
+  display: grid;
+}
+
+.contact-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  padding: .7rem;
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 650;
+  font-size: .9rem;
+  text-decoration: none;
+  background: rgba(127, 127, 127, .1);
+  transition: background .2s ease;
+}
+
+.contact-menu a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .contact-menu {
+    grid-template-columns: 1fr;
+  }
+}
