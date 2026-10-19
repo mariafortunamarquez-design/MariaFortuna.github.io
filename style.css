@@ -212,3 +212,107 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+/* Contacto desplegable dentro de la tarjeta */
+.contact-menu {
+  position: static;
+  display: none;
+  grid-template-columns: 1fr;
+  gap: .65rem;
+  margin-top: .75rem;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: none;
+}
+
+.contact-menu.open {
+  display: grid;
+}
+
+.contact-item {
+  min-width: 0;
+}
+
+.contact-option {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(127, 127, 127, .08);
+  color: var(--text);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.contact-option:hover,
+.contact-option[aria-expanded="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact-details {
+  padding: .85rem .25rem .25rem;
+}
+
+.contact-details[hidden] {
+  display: none;
+}
+
+.contact-value {
+  display: block;
+  margin-bottom: .75rem;
+  color: var(--text);
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.copy-button,
+.contact-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: .6rem .85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(127, 127, 127, .1);
+  color: var(--text);
+  font: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.copy-button:hover,
+.contact-actions a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.copy-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.copy-status:empty {
+  display: none;
+}
+
+.contact-wrap button:focus-visible,
+.contact-wrap a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
